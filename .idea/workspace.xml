@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="aa08a0c7-5aa0-418a-a4e8-7ef12562f37d" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+  </component>
+  <component name="ProjectId" id="1cNepKiI3xfekzMwFTCOyJR6nix" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+  </component>
+  <component name="RunManager">
+    <configuration name="DEV" type="docker-deploy" factoryName="dockerfile" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="buildCliOptions" value="" />
+          <option name="command" value="" />
+          <option name="containerName" value="bytevault-api" />
+          <option name="entrypoint" value="" />
+          <option name="imageTag" value="bytevault-api" />
+          <option name="portBindings">
+            <list>
+              <DockerPortBindingImpl>
+                <option name="containerPort" value="8000" />
+                <option name="hostPort" value="8080" />
+              </DockerPortBindingImpl>
+            </list>
+          </option>
+          <option name="commandLineOptions" value="-d -it --network byte-vault" />
+          <option name="sourceFilePath" value="Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Docker" type="9fbbdea:ServiceModel$ServiceNode" />
+              </path>
+            </expand>
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="aa08a0c7-5aa0-418a-a4e8-7ef12562f37d" name="Default Changelist" comment="" />
+      <created>1590373659825</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1590373659825</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="964" y="0" key="#DEV" timestamp="1633835613163">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="964" y="0" key="#DEV/0.0.2560.1040@0.0.2560.1040" timestamp="1633835613163" />
+    <state x="734" y="168" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1634154184263">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="734" y="168" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1634154184263" />
+    <state x="960" y="245" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1633835436375">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="960" y="245" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1633835436375" />
+    <state x="1010" y="201" key="FileChooserDialogImpl" timestamp="1630863460360">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="1010" y="201" key="FileChooserDialogImpl/0.0.2560.1040@0.0.2560.1040" timestamp="1630863460360" />
+    <state x="672" y="77" key="SettingsEditor" timestamp="1634151175486">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="672" y="77" key="SettingsEditor/0.0.2560.1040@0.0.2560.1040" timestamp="1634151175486" />
+  </component>
+</project>
