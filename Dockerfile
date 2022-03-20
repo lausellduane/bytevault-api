@@ -1,9 +1,11 @@
-FROM golang:alpine as apibuilder
+FROM golang:1.16-alpine as apibuilder
 
 WORKDIR /go/src/app/
 
 RUN apk add --no-cache git && \
     apk add build-base
+
+RUN go mod init
 
 RUN go get github.com/rs/cors && \
     go get github.com/gorilla/mux && \
@@ -13,6 +15,7 @@ RUN go get github.com/rs/cors && \
     go get github.com/logmatic/logmatic-go && \
     go get github.com/simplereach/timeutils && \
     go get go.mongodb.org/mongo-driver/mongo
+
 
 COPY ./*.go ./
 

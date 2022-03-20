@@ -15,7 +15,7 @@ func NewRouter() *mux.Router{
 
 func NewHandler(router *mux.Router) http.Handler {
     headersOk := handlers.AllowedHeaders([]string{"X-Requested-With", "Content-Type", "Bearer", "Bearer ", "content-type", "Origin", "Accept"})
-    originsOk := handlers.AllowedOrigins([]string{"http://localhost:8000"})
+    originsOk := handlers.AllowedOrigins([]string{"http://localhost:8000", "http://localhost:3000"})
     methodsOk := handlers.AllowedMethods([]string{"GET"})
     credentialsOk := handlers.AllowCredentials()
 
