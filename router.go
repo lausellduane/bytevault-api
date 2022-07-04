@@ -8,9 +8,16 @@ import (
 
 func NewRouter() *mux.Router{
     r := mux.NewRouter()
+    // GET Requests
     r.HandleFunc("/api/v1/fragments", getFragmentsHandler).Methods("GET")
-    r.HandleFunc("/api/v1/fragments", deleteCodeFragmentsHandler).Methods("DELETE")
+    r.HandleFunc("/api/v1/fragments/tags", getFragmentsTagsHandler).Methods("GET")
+    // POST Requests
     r.HandleFunc("/api/v1/fragments", postCodeFragmentHandler).Methods("POST")
+    // PATCH Requests
+
+    // DELETE Requests
+    r.HandleFunc("/api/v1/fragments", deleteCodeFragmentsHandler).Methods("DELETE")
+    
     return r
 }
 
