@@ -1,10 +1,11 @@
 package main
 
 import (
-    // "fmt"
+    "fmt"
     "net/http"
     "encoding/json"
     "go.mongodb.org/mongo-driver/bson"
+    "go.mongodb.org/mongo-driver/mongo/options"
     "context"
     "log"
 )
@@ -16,9 +17,30 @@ func getFragmentsHandler(w http.ResponseWriter, r *http.Request){
     defer cur.Close(context.Background())
     var fragments []bson.M
     if err = cur.All(ctx, &fragments); err != nil {
-        log.Fatal(err)
+        http.Error(w, fmt.Sprintf("%v", err), 500)
+		return
     }
 
     json.NewEncoder(w).Encode(fragments)
+    return
+}
+
+func getFragmentsTagsHandler(w http.ResponseWriter, r *http.Request){
+    collection := db.Collection("tags")
+    opts := options.Find().SetProjection(bson.D{{"_id", 0}})
+    cur, err := collection.Find(ctx, bson.D{}, opts)
+    
+    if err != nil { 
+        http.Error(w, fmt.Sprintf("%v", err), 500)
+        return 
+    }
+    defer cur.Close(context.Background())
+    var tags []bson.M
+    if err = cur.All(ctx, &tags); err != nil {
+        http.Error(w, fmt.Sprintf("%v", err), 500)
+		return
+    }
+
+    json.NewEncoder(w).Encode(tags)
     return
 }
