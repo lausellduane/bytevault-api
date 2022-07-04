@@ -44,3 +44,23 @@ func getFragmentsTagsHandler(w http.ResponseWriter, r *http.Request){
     json.NewEncoder(w).Encode(tags)
     return
 }
+
+func getProgrammingLanguagesHandler(w http.ResponseWriter, r *http.Request){
+    collection := db.Collection("programmingLanguages")
+    opts := options.Find().SetProjection(bson.D{{"_id", 0}})
+    cur, err := collection.Find(ctx, bson.D{}, opts)
+
+    if err != nil { 
+        http.Error(w, fmt.Sprintf("%v", err), 500)
+        return 
+    }
+    defer cur.Close(context.Background())
+    var languages []bson.M
+    if err = cur.All(ctx, &languages); err != nil {
+        http.Error(w, fmt.Sprintf("%v", err), 500)
+		return
+    }
+
+    json.NewEncoder(w).Encode(languages)
+    return
+}

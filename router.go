@@ -11,6 +11,7 @@ func NewRouter() *mux.Router{
     // GET Requests
     r.HandleFunc("/api/v1/fragments", getFragmentsHandler).Methods("GET")
     r.HandleFunc("/api/v1/fragments/tags", getFragmentsTagsHandler).Methods("GET")
+    r.HandleFunc("/api/v1/programming-languages", getProgrammingLanguagesHandler).Methods("GET")
     // POST Requests
     r.HandleFunc("/api/v1/fragments", postCodeFragmentHandler).Methods("POST")
     // PATCH Requests
