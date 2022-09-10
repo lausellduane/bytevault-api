@@ -21,7 +21,7 @@ func postCodeFragmentHandler(w http.ResponseWriter, r *http.Request){
 	if err := json.Unmarshal(bodyData, &fragment); err != nil {
 		http.Error(w, fmt.Sprintf("%v", err), 500)
 		return
-    }
+	}
 
 	// Handle tags
 	var newRawTags Tags
@@ -44,10 +44,12 @@ func postCodeFragmentHandler(w http.ResponseWriter, r *http.Request){
 		newTags = append(newTags, newTag)
 	}
 
-	_, err = collectionTags.InsertMany(ctx, newTags)
-	if err != nil {
-		http.Error(w, fmt.Sprintf("InsertMany() ERROR: %s", err), 500)
-		return
+	if(len(newTags) > 0){
+		_, err = collectionTags.InsertMany(ctx, newTags)
+		if err != nil {
+			http.Error(w, fmt.Sprintf("InsertMany() ERROR: %s", err), 500)
+			return
+		}
 	}
 
 	fragmentResult, err := collectionFragments.InsertOne(ctx, bson.D{

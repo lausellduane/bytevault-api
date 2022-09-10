@@ -29,7 +29,7 @@ func deleteCodeFragmentsHandler(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		http.Error(w, fmt.Sprintf("primitive.ObjectIDFromHex ERROR: %s", err), 500)
 		return
-	} 
+	}
 
 	// Call the DeleteOne() method by passing BSON
 	res, err := collection.DeleteOne(ctx, bson.M{"_id": idPrimitive})
@@ -47,4 +47,3 @@ func deleteCodeFragmentsHandler(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(idPrimitive)
 	return
 }
-
