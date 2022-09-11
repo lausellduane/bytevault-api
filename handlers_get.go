@@ -8,6 +8,7 @@ import (
     "go.mongodb.org/mongo-driver/mongo/options"
     "context"
     "log"
+    "sort"
 )
 
 func getFragmentsHandler(w http.ResponseWriter, r *http.Request){
@@ -15,11 +16,14 @@ func getFragmentsHandler(w http.ResponseWriter, r *http.Request){
     cur, err := collection.Find(ctx, bson.D{})
     if err != nil { log.Fatal(err) }
     defer cur.Close(context.Background())
-    var fragments []bson.M
+
+    var fragments []CodeFragment
     if err = cur.All(ctx, &fragments); err != nil {
         http.Error(w, fmt.Sprintf("%v", err), 500)
 		return
     }
+
+    sort.Slice(fragments, func(i, j int) bool { return fragments[i].Title < fragments[j].Title })
 
     json.NewEncoder(w).Encode(fragments)
     return

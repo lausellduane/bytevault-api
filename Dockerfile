@@ -14,7 +14,8 @@ RUN go get github.com/rs/cors && \
     go get github.com/sirupsen/logrus && \
     go get github.com/logmatic/logmatic-go && \
     go get github.com/simplereach/timeutils && \
-    go get go.mongodb.org/mongo-driver/mongo
+    go get go.mongodb.org/mongo-driver/mongo && \
+    go get go.mongodb.org/mongo-driver/bson/primitive
 
 
 COPY ./*.go ./
